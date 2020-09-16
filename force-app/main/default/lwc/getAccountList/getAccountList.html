@@ -1,0 +1,19 @@
+<template>
+    <div class="slds-p-around_medium">
+        <lightning-card icon-name="standard:account" title="List of Accounts">
+            <div class="slds-p-around_medium">
+                <template for:each={wireAccount.data} for:item="acc">
+                   <div class="slds:item" key={acc.Id}>
+                       <strong>{acc.Name}</strong><br>
+                       <lightning-formatted-number value={acc.AnnualRevenue}
+                            format-style="currency"
+                            currency-code="USD"
+                            currency-display-as="code">
+                        </lightning-formatted-number><br>
+                        <p><b> Account Type: </b>{acc.Type}</p><br><br>     
+                   </div>
+                </template>
+            </div>
+        </lightning-card>
+    </div>
+</template>
